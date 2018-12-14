@@ -95,5 +95,7 @@ namespace WerewolfClient
         {
             TBServer.Text = "http://project-ile.net:23416/werewolf/";
         }
+
+        
     }
 }

@@ -214,11 +214,13 @@ namespace WerewolfClient
                     case EventEnum.SwitchToDayTime:
                         AddChatMessage("Switch to day time of day #" + wm.EventPayloads["Game.Current.Day"] + ".");
                         _currentPeriod = Game.PeriodEnum.Day;
+                        BgDay.Visible = true;
                         LBPeriod.Text = "Day time of";
                         break;
                     case EventEnum.SwitchToNightTime:
                         AddChatMessage("Switch to night time of day #" + wm.EventPayloads["Game.Current.Day"] + ".");
                         _currentPeriod = Game.PeriodEnum.Night;
+                        BgDay.Visible = false;
                         LBPeriod.Text = "Night time of";
                         break;
                     case EventEnum.UpdateDay:
@@ -403,5 +405,9 @@ namespace WerewolfClient
         {
             GBChat.Visible = !GBChat.Visible;
         }
+
+      
+
+       
     }
 }
