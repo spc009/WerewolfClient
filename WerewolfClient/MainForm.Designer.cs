@@ -30,12 +30,23 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.GBPlayers = new System.Windows.Forms.GroupBox();
+            this.BtnSignOut = new System.Windows.Forms.Button();
+            this.BtnPlayer13 = new System.Windows.Forms.Button();
+            this.GBStatus = new System.Windows.Forms.GroupBox();
+            this.LBTime = new System.Windows.Forms.Label();
+            this.LBDay = new System.Windows.Forms.Label();
+            this.LBPeriod = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.GBChat = new System.Windows.Forms.GroupBox();
             this.TbChatInput = new System.Windows.Forms.TextBox();
             this.TbChatBox = new System.Windows.Forms.TextBox();
+            this.GBAction = new System.Windows.Forms.GroupBox();
+            this.BtnJoin = new System.Windows.Forms.Button();
+            this.BtnAction = new System.Windows.Forms.Button();
+            this.BtnVote = new System.Windows.Forms.Button();
             this.BtnChat = new System.Windows.Forms.Button();
             this.BtnPlayer12 = new System.Windows.Forms.Button();
-            this.BtnPlayer13 = new System.Windows.Forms.Button();
             this.BtnPlayer1 = new System.Windows.Forms.Button();
             this.BtnPlayer14 = new System.Windows.Forms.Button();
             this.BtnPlayer7 = new System.Windows.Forms.Button();
@@ -50,30 +61,23 @@
             this.BtnPlayer10 = new System.Windows.Forms.Button();
             this.BtnPlayer11 = new System.Windows.Forms.Button();
             this.BtnPlayer4 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.GBAction = new System.Windows.Forms.GroupBox();
-            this.BtnJoin = new System.Windows.Forms.Button();
-            this.BtnAction = new System.Windows.Forms.Button();
-            this.BtnVote = new System.Windows.Forms.Button();
-            this.GBStatus = new System.Windows.Forms.GroupBox();
-            this.LBTime = new System.Windows.Forms.Label();
-            this.LBDay = new System.Windows.Forms.Label();
-            this.LBPeriod = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.BgDay = new System.Windows.Forms.PictureBox();
             this.GBPlayers.SuspendLayout();
-            this.GBChat.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.GBAction.SuspendLayout();
             this.GBStatus.SuspendLayout();
+            this.GBChat.SuspendLayout();
+            this.GBAction.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BgDay)).BeginInit();
             this.SuspendLayout();
             // 
             // GBPlayers
             // 
+            this.GBPlayers.BackColor = System.Drawing.Color.Transparent;
+            this.GBPlayers.Controls.Add(this.BtnPlayer13);
+            this.GBPlayers.Controls.Add(this.GBStatus);
             this.GBPlayers.Controls.Add(this.GBChat);
+            this.GBPlayers.Controls.Add(this.GBAction);
             this.GBPlayers.Controls.Add(this.BtnChat);
             this.GBPlayers.Controls.Add(this.BtnPlayer12);
-            this.GBPlayers.Controls.Add(this.BtnPlayer13);
             this.GBPlayers.Controls.Add(this.BtnPlayer1);
             this.GBPlayers.Controls.Add(this.BtnPlayer14);
             this.GBPlayers.Controls.Add(this.BtnPlayer7);
@@ -88,20 +92,105 @@
             this.GBPlayers.Controls.Add(this.BtnPlayer10);
             this.GBPlayers.Controls.Add(this.BtnPlayer11);
             this.GBPlayers.Controls.Add(this.BtnPlayer4);
-            this.GBPlayers.Controls.Add(this.pictureBox1);
-            this.GBPlayers.Location = new System.Drawing.Point(12, 12);
+            this.GBPlayers.Controls.Add(this.BgDay);
+            this.GBPlayers.Location = new System.Drawing.Point(3, 0);
             this.GBPlayers.Name = "GBPlayers";
-            this.GBPlayers.Size = new System.Drawing.Size(1024, 724);
+            this.GBPlayers.Size = new System.Drawing.Size(1024, 706);
             this.GBPlayers.TabIndex = 0;
             this.GBPlayers.TabStop = false;
             this.GBPlayers.Text = "Players";
+            this.GBPlayers.BackgroundImageChanged += new System.EventHandler(this.BtnChat_Click);
+            // 
+            // BtnSignOut
+            // 
+            this.BtnSignOut.BackColor = System.Drawing.Color.White;
+            this.BtnSignOut.Location = new System.Drawing.Point(89, 71);
+            this.BtnSignOut.Name = "BtnSignOut";
+            this.BtnSignOut.Size = new System.Drawing.Size(95, 52);
+            this.BtnSignOut.TabIndex = 20;
+            this.BtnSignOut.Text = "Sign Out";
+            this.BtnSignOut.UseVisualStyleBackColor = false;
+            this.BtnSignOut.Click += new System.EventHandler(this.BtnSignOut_Click);
+            // 
+            // BtnPlayer13
+            // 
+            this.BtnPlayer13.Image = ((System.Drawing.Image)(resources.GetObject("BtnPlayer13.Image")));
+            this.BtnPlayer13.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.BtnPlayer13.Location = new System.Drawing.Point(671, 252);
+            this.BtnPlayer13.Name = "BtnPlayer13";
+            this.BtnPlayer13.Size = new System.Drawing.Size(90, 90);
+            this.BtnPlayer13.TabIndex = 19;
+            this.BtnPlayer13.Tag = "13";
+            this.BtnPlayer13.Text = "Player";
+            this.BtnPlayer13.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.BtnPlayer13.UseVisualStyleBackColor = true;
+            // 
+            // GBStatus
+            // 
+            this.GBStatus.BackColor = System.Drawing.Color.Gray;
+            this.GBStatus.Controls.Add(this.LBTime);
+            this.GBStatus.Controls.Add(this.LBDay);
+            this.GBStatus.Controls.Add(this.LBPeriod);
+            this.GBStatus.Controls.Add(this.label2);
+            this.GBStatus.Controls.Add(this.label1);
+            this.GBStatus.Location = new System.Drawing.Point(6, 14);
+            this.GBStatus.Name = "GBStatus";
+            this.GBStatus.Size = new System.Drawing.Size(114, 82);
+            this.GBStatus.TabIndex = 8;
+            this.GBStatus.TabStop = false;
+            this.GBStatus.Text = "Status";
+            // 
+            // LBTime
+            // 
+            this.LBTime.AutoSize = true;
+            this.LBTime.Location = new System.Drawing.Point(40, 52);
+            this.LBTime.Name = "LBTime";
+            this.LBTime.Size = new System.Drawing.Size(13, 13);
+            this.LBTime.TabIndex = 12;
+            this.LBTime.Text = "0";
+            // 
+            // LBDay
+            // 
+            this.LBDay.AutoSize = true;
+            this.LBDay.Location = new System.Drawing.Point(40, 35);
+            this.LBDay.Name = "LBDay";
+            this.LBDay.Size = new System.Drawing.Size(13, 13);
+            this.LBDay.TabIndex = 11;
+            this.LBDay.Text = "0";
+            // 
+            // LBPeriod
+            // 
+            this.LBPeriod.AutoSize = true;
+            this.LBPeriod.Location = new System.Drawing.Point(7, 19);
+            this.LBPeriod.Name = "LBPeriod";
+            this.LBPeriod.Size = new System.Drawing.Size(44, 13);
+            this.LBPeriod.TabIndex = 10;
+            this.LBPeriod.Text = "Night of";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(7, 52);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(30, 13);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Time";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(7, 36);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(36, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Day #";
             // 
             // GBChat
             // 
-            this.GBChat.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("GBChat.BackgroundImage")));
+            this.GBChat.BackColor = System.Drawing.Color.White;
             this.GBChat.Controls.Add(this.TbChatInput);
             this.GBChat.Controls.Add(this.TbChatBox);
-            this.GBChat.Location = new System.Drawing.Point(599, 61);
+            this.GBChat.Location = new System.Drawing.Point(591, 64);
             this.GBChat.Name = "GBChat";
             this.GBChat.Size = new System.Drawing.Size(419, 636);
             this.GBChat.TabIndex = 2;
@@ -120,7 +209,7 @@
             // 
             // TbChatBox
             // 
-            this.TbChatBox.BackColor = System.Drawing.Color.White;
+            this.TbChatBox.BackColor = System.Drawing.Color.Gainsboro;
             this.TbChatBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TbChatBox.ForeColor = System.Drawing.SystemColors.WindowText;
             this.TbChatBox.Location = new System.Drawing.Point(6, 19);
@@ -130,9 +219,53 @@
             this.TbChatBox.Size = new System.Drawing.Size(405, 557);
             this.TbChatBox.TabIndex = 0;
             // 
+            // GBAction
+            // 
+            this.GBAction.BackColor = System.Drawing.Color.White;
+            this.GBAction.Controls.Add(this.BtnSignOut);
+            this.GBAction.Controls.Add(this.BtnJoin);
+            this.GBAction.Controls.Add(this.BtnAction);
+            this.GBAction.Controls.Add(this.BtnVote);
+            this.GBAction.Location = new System.Drawing.Point(270, 409);
+            this.GBAction.Name = "GBAction";
+            this.GBAction.Size = new System.Drawing.Size(267, 131);
+            this.GBAction.TabIndex = 3;
+            this.GBAction.TabStop = false;
+            this.GBAction.Text = "Action";
+            // 
+            // BtnJoin
+            // 
+            this.BtnJoin.Location = new System.Drawing.Point(180, 19);
+            this.BtnJoin.Name = "BtnJoin";
+            this.BtnJoin.Size = new System.Drawing.Size(75, 46);
+            this.BtnJoin.TabIndex = 9;
+            this.BtnJoin.Text = "Join Game";
+            this.BtnJoin.UseVisualStyleBackColor = true;
+            this.BtnJoin.Click += new System.EventHandler(this.BtnJoin_Click);
+            // 
+            // BtnAction
+            // 
+            this.BtnAction.Location = new System.Drawing.Point(99, 19);
+            this.BtnAction.Name = "BtnAction";
+            this.BtnAction.Size = new System.Drawing.Size(75, 46);
+            this.BtnAction.TabIndex = 1;
+            this.BtnAction.Text = "Action";
+            this.BtnAction.UseVisualStyleBackColor = true;
+            this.BtnAction.Click += new System.EventHandler(this.BtnAction_Click);
+            // 
+            // BtnVote
+            // 
+            this.BtnVote.Location = new System.Drawing.Point(18, 19);
+            this.BtnVote.Name = "BtnVote";
+            this.BtnVote.Size = new System.Drawing.Size(75, 46);
+            this.BtnVote.TabIndex = 0;
+            this.BtnVote.Text = "Vote";
+            this.BtnVote.UseVisualStyleBackColor = true;
+            this.BtnVote.Click += new System.EventHandler(this.BtnVote_Click);
+            // 
             // BtnChat
             // 
-            this.BtnChat.Location = new System.Drawing.Point(939, 14);
+            this.BtnChat.Location = new System.Drawing.Point(931, 19);
             this.BtnChat.Name = "BtnChat";
             this.BtnChat.Size = new System.Drawing.Size(79, 41);
             this.BtnChat.TabIndex = 17;
@@ -152,19 +285,6 @@
             this.BtnPlayer12.Text = "Player";
             this.BtnPlayer12.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.BtnPlayer12.UseVisualStyleBackColor = true;
-            // 
-            // BtnPlayer13
-            // 
-            this.BtnPlayer13.Image = ((System.Drawing.Image)(resources.GetObject("BtnPlayer13.Image")));
-            this.BtnPlayer13.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.BtnPlayer13.Location = new System.Drawing.Point(645, 252);
-            this.BtnPlayer13.Name = "BtnPlayer13";
-            this.BtnPlayer13.Size = new System.Drawing.Size(90, 90);
-            this.BtnPlayer13.TabIndex = 14;
-            this.BtnPlayer13.Tag = "13";
-            this.BtnPlayer13.Text = "Player";
-            this.BtnPlayer13.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.BtnPlayer13.UseVisualStyleBackColor = true;
             // 
             // BtnPlayer1
             // 
@@ -351,135 +471,34 @@
             this.BtnPlayer4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.BtnPlayer4.UseVisualStyleBackColor = true;
             // 
-            // pictureBox1
+            // BgDay
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.InitialImage = null;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1024, 724);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
-            // GBAction
-            // 
-            this.GBAction.Controls.Add(this.BtnJoin);
-            this.GBAction.Controls.Add(this.BtnAction);
-            this.GBAction.Controls.Add(this.BtnVote);
-            this.GBAction.Location = new System.Drawing.Point(1042, 465);
-            this.GBAction.Name = "GBAction";
-            this.GBAction.Size = new System.Drawing.Size(267, 82);
-            this.GBAction.TabIndex = 3;
-            this.GBAction.TabStop = false;
-            this.GBAction.Text = "Action";
-            // 
-            // BtnJoin
-            // 
-            this.BtnJoin.Location = new System.Drawing.Point(180, 19);
-            this.BtnJoin.Name = "BtnJoin";
-            this.BtnJoin.Size = new System.Drawing.Size(75, 46);
-            this.BtnJoin.TabIndex = 9;
-            this.BtnJoin.Text = "Join Game";
-            this.BtnJoin.UseVisualStyleBackColor = true;
-            this.BtnJoin.Click += new System.EventHandler(this.BtnJoin_Click);
-            // 
-            // BtnAction
-            // 
-            this.BtnAction.Location = new System.Drawing.Point(99, 19);
-            this.BtnAction.Name = "BtnAction";
-            this.BtnAction.Size = new System.Drawing.Size(75, 46);
-            this.BtnAction.TabIndex = 1;
-            this.BtnAction.Text = "Action";
-            this.BtnAction.UseVisualStyleBackColor = true;
-            this.BtnAction.Click += new System.EventHandler(this.BtnAction_Click);
-            // 
-            // BtnVote
-            // 
-            this.BtnVote.Location = new System.Drawing.Point(18, 19);
-            this.BtnVote.Name = "BtnVote";
-            this.BtnVote.Size = new System.Drawing.Size(75, 46);
-            this.BtnVote.TabIndex = 0;
-            this.BtnVote.Text = "Vote";
-            this.BtnVote.UseVisualStyleBackColor = true;
-            this.BtnVote.Click += new System.EventHandler(this.BtnVote_Click);
-            // 
-            // GBStatus
-            // 
-            this.GBStatus.Controls.Add(this.LBTime);
-            this.GBStatus.Controls.Add(this.LBDay);
-            this.GBStatus.Controls.Add(this.LBPeriod);
-            this.GBStatus.Controls.Add(this.label2);
-            this.GBStatus.Controls.Add(this.label1);
-            this.GBStatus.Location = new System.Drawing.Point(1337, 465);
-            this.GBStatus.Name = "GBStatus";
-            this.GBStatus.Size = new System.Drawing.Size(114, 82);
-            this.GBStatus.TabIndex = 8;
-            this.GBStatus.TabStop = false;
-            this.GBStatus.Text = "Status";
-            // 
-            // LBTime
-            // 
-            this.LBTime.AutoSize = true;
-            this.LBTime.Location = new System.Drawing.Point(40, 52);
-            this.LBTime.Name = "LBTime";
-            this.LBTime.Size = new System.Drawing.Size(13, 13);
-            this.LBTime.TabIndex = 12;
-            this.LBTime.Text = "0";
-            // 
-            // LBDay
-            // 
-            this.LBDay.AutoSize = true;
-            this.LBDay.Location = new System.Drawing.Point(40, 35);
-            this.LBDay.Name = "LBDay";
-            this.LBDay.Size = new System.Drawing.Size(13, 13);
-            this.LBDay.TabIndex = 11;
-            this.LBDay.Text = "0";
-            // 
-            // LBPeriod
-            // 
-            this.LBPeriod.AutoSize = true;
-            this.LBPeriod.Location = new System.Drawing.Point(7, 19);
-            this.LBPeriod.Name = "LBPeriod";
-            this.LBPeriod.Size = new System.Drawing.Size(44, 13);
-            this.LBPeriod.TabIndex = 10;
-            this.LBPeriod.Text = "Night of";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(7, 52);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(30, 13);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "Time";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(7, 36);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(36, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Day #";
+            this.BgDay.BackColor = System.Drawing.Color.White;
+            this.BgDay.Image = ((System.Drawing.Image)(resources.GetObject("BgDay.Image")));
+            this.BgDay.Location = new System.Drawing.Point(-7, 0);
+            this.BgDay.Name = "BgDay";
+            this.BgDay.Size = new System.Drawing.Size(1031, 705);
+            this.BgDay.TabIndex = 18;
+            this.BgDay.TabStop = false;
+            this.BgDay.Visible = false;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1463, 903);
-            this.Controls.Add(this.GBStatus);
-            this.Controls.Add(this.GBAction);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new System.Drawing.Size(1010, 957);
             this.Controls.Add(this.GBPlayers);
             this.Name = "MainForm";
             this.Text = "Werewolf Client";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.GBPlayers.ResumeLayout(false);
-            this.GBChat.ResumeLayout(false);
-            this.GBChat.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.GBAction.ResumeLayout(false);
             this.GBStatus.ResumeLayout(false);
             this.GBStatus.PerformLayout();
+            this.GBChat.ResumeLayout(false);
+            this.GBChat.PerformLayout();
+            this.GBAction.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.BgDay)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -501,7 +520,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button BtnAction;
         private System.Windows.Forms.Button BtnPlayer12;
-        private System.Windows.Forms.Button BtnPlayer13;
         private System.Windows.Forms.Button BtnPlayer1;
         private System.Windows.Forms.Button BtnPlayer14;
         private System.Windows.Forms.Button BtnPlayer7;
@@ -516,8 +534,10 @@
         private System.Windows.Forms.Button BtnPlayer10;
         private System.Windows.Forms.Button BtnPlayer11;
         private System.Windows.Forms.Button BtnPlayer4;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button BtnChat;
+        private System.Windows.Forms.PictureBox BgDay;
+        private System.Windows.Forms.Button BtnSignOut;
+        private System.Windows.Forms.Button BtnPlayer13;
     }
 }
 
