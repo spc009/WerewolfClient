@@ -30,6 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.GBPlayers = new System.Windows.Forms.GroupBox();
+            this.GBChat = new System.Windows.Forms.GroupBox();
+            this.TbChatInput = new System.Windows.Forms.TextBox();
+            this.TbChatBox = new System.Windows.Forms.TextBox();
             this.BtnChat = new System.Windows.Forms.Button();
             this.BtnPlayer12 = new System.Windows.Forms.Button();
             this.BtnPlayer13 = new System.Windows.Forms.Button();
@@ -48,9 +51,6 @@
             this.BtnPlayer11 = new System.Windows.Forms.Button();
             this.BtnPlayer4 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.GBChat = new System.Windows.Forms.GroupBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.TbChatBox = new System.Windows.Forms.TextBox();
             this.GBAction = new System.Windows.Forms.GroupBox();
             this.BtnJoin = new System.Windows.Forms.Button();
             this.BtnAction = new System.Windows.Forms.Button();
@@ -62,8 +62,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.GBPlayers.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.GBChat.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.GBAction.SuspendLayout();
             this.GBStatus.SuspendLayout();
             this.SuspendLayout();
@@ -95,6 +95,40 @@
             this.GBPlayers.TabIndex = 0;
             this.GBPlayers.TabStop = false;
             this.GBPlayers.Text = "Players";
+            // 
+            // GBChat
+            // 
+            this.GBChat.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("GBChat.BackgroundImage")));
+            this.GBChat.Controls.Add(this.TbChatInput);
+            this.GBChat.Controls.Add(this.TbChatBox);
+            this.GBChat.Location = new System.Drawing.Point(599, 61);
+            this.GBChat.Name = "GBChat";
+            this.GBChat.Size = new System.Drawing.Size(419, 636);
+            this.GBChat.TabIndex = 2;
+            this.GBChat.TabStop = false;
+            this.GBChat.Text = "Chat";
+            this.GBChat.Visible = false;
+            // 
+            // TbChatInput
+            // 
+            this.TbChatInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TbChatInput.Location = new System.Drawing.Point(6, 582);
+            this.TbChatInput.Name = "TbChatInput";
+            this.TbChatInput.Size = new System.Drawing.Size(405, 26);
+            this.TbChatInput.TabIndex = 1;
+            this.TbChatInput.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TbChatInput_Enter);
+            // 
+            // TbChatBox
+            // 
+            this.TbChatBox.BackColor = System.Drawing.Color.White;
+            this.TbChatBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TbChatBox.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.TbChatBox.Location = new System.Drawing.Point(6, 19);
+            this.TbChatBox.Multiline = true;
+            this.TbChatBox.Name = "TbChatBox";
+            this.TbChatBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.TbChatBox.Size = new System.Drawing.Size(405, 557);
+            this.TbChatBox.TabIndex = 0;
             // 
             // BtnChat
             // 
@@ -320,46 +354,12 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
+            this.pictureBox1.InitialImage = null;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(1024, 724);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            // 
-            // GBChat
-            // 
-            this.GBChat.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("GBChat.BackgroundImage")));
-            this.GBChat.Controls.Add(this.textBox2);
-            this.GBChat.Controls.Add(this.TbChatBox);
-            this.GBChat.Location = new System.Drawing.Point(599, 61);
-            this.GBChat.Name = "GBChat";
-            this.GBChat.Size = new System.Drawing.Size(419, 636);
-            this.GBChat.TabIndex = 2;
-            this.GBChat.TabStop = false;
-            this.GBChat.Text = "Chat";
-            this.GBChat.Visible = false;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(6, 587);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(405, 26);
-            this.textBox2.TabIndex = 1;
-            this.textBox2.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.textBox2_PreviewKeyDown);
-            // 
-            // TbChatBox
-            // 
-            this.TbChatBox.BackColor = System.Drawing.Color.White;
-            this.TbChatBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TbChatBox.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.TbChatBox.Location = new System.Drawing.Point(6, 19);
-            this.TbChatBox.Multiline = true;
-            this.TbChatBox.Name = "TbChatBox";
-            this.TbChatBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.TbChatBox.Size = new System.Drawing.Size(405, 557);
-            this.TbChatBox.TabIndex = 0;
             // 
             // GBAction
             // 
@@ -474,9 +474,9 @@
             this.Text = "Werewolf Client";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.GBPlayers.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.GBChat.ResumeLayout(false);
             this.GBChat.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.GBAction.ResumeLayout(false);
             this.GBStatus.ResumeLayout(false);
             this.GBStatus.PerformLayout();
@@ -488,7 +488,7 @@
 
         private System.Windows.Forms.GroupBox GBPlayers;
         private System.Windows.Forms.GroupBox GBChat;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox TbChatInput;
         private System.Windows.Forms.TextBox TbChatBox;
         private System.Windows.Forms.GroupBox GBAction;
         private System.Windows.Forms.Button BtnVote;
