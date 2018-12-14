@@ -361,5 +361,21 @@ namespace WerewolfClient
         {
             Environment.Exit(0);
         }
+
+        
+        private void textBox2_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                AddChatMessage( " : " + textBox2.Text);
+                textBox2.Text = "";
+            }
+            
+        }
+
+        private void BtnChat_Click(object sender, EventArgs e)
+        {
+            GBChat.Visible = !GBChat.Visible;
+        }
     }
 }

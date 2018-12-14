@@ -35,7 +35,7 @@ namespace WerewolfClient
         public const string TRUE = "True";
         public const string FALSE = "False";
          
-
+        //initial value 
         public enum EventEnum
         {
             NOP = 1,
@@ -54,6 +54,7 @@ namespace WerewolfClient
             OtherShotDead = 14,
             Alive = 15,
         }
+
         public const string ROLE_SEER = "Seer";
         public const string ROLE_AURA_SEER = "Aura Seer";
         public const string ROLE_PRIEST = "Priest";
@@ -84,6 +85,7 @@ namespace WerewolfClient
         public const string ACTION_REVEAL = "Reveal";
         public const string ACTION_AURA = "Aura";
         public const string ACTION_REVIVE = "Revive";
+
 
         private EventEnum _event { get; set; }
         public EventEnum Event { get => _event; set => _event = value; }
@@ -121,7 +123,8 @@ namespace WerewolfClient
                 //TODO: to do what?
             }
         }
-
+        
+        //game play
         public void Update()
         {
             lock(this)
@@ -136,6 +139,7 @@ namespace WerewolfClient
                     Console.WriteLine(ex.Message);
                     return;
                 }
+                
                 if (!_isPlaying)
                 {
                     if (_game.Status == Game.StatusEnum.Playing)
@@ -278,7 +282,8 @@ namespace WerewolfClient
                 }
             }
         }
-    
+        
+        //game join
         public void JoinGame()
         {
             if (_player == null)
@@ -315,6 +320,8 @@ namespace WerewolfClient
             }
             NotifyAll();
         }
+
+        //game signin
         public void SignIn(string server, string login, string password)
         {
             try
@@ -334,6 +341,8 @@ namespace WerewolfClient
             }
             NotifyAll();
         }
+
+        //game signup
         public void SignUp(string server, string login, string password)
         {
             try
@@ -355,6 +364,7 @@ namespace WerewolfClient
             NotifyAll();
         }
 
+        //vote
         public void Vote(string target)
         {
             try
@@ -381,6 +391,7 @@ namespace WerewolfClient
             NotifyAll();
         }
 
+        //action
         internal void Action(string target)
         {
             try
