@@ -376,14 +376,8 @@ namespace WerewolfClient
             GBChat.Visible = !GBChat.Visible;
         }
 
-        private void BtnSignOut_Click(object sender, EventArgs e)
-        {
-            
-        }
+      
 
-        private void LinkToLogin()
-        {
-            Login _login = new Login(new MainForm());
-        }
+       
     }
 }

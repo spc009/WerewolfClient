@@ -30,8 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.GBPlayers = new System.Windows.Forms.GroupBox();
-            this.BtnSignOut = new System.Windows.Forms.Button();
-            this.BtnPlayer13 = new System.Windows.Forms.Button();
             this.GBStatus = new System.Windows.Forms.GroupBox();
             this.LBTime = new System.Windows.Forms.Label();
             this.LBDay = new System.Windows.Forms.Label();
@@ -62,6 +60,7 @@
             this.BtnPlayer11 = new System.Windows.Forms.Button();
             this.BtnPlayer4 = new System.Windows.Forms.Button();
             this.BgDay = new System.Windows.Forms.PictureBox();
+            this.BtnPlayer13 = new System.Windows.Forms.Button();
             this.GBPlayers.SuspendLayout();
             this.GBStatus.SuspendLayout();
             this.GBChat.SuspendLayout();
@@ -72,8 +71,8 @@
             // GBPlayers
             // 
             this.GBPlayers.BackColor = System.Drawing.Color.Transparent;
-            this.GBPlayers.Controls.Add(this.BtnPlayer13);
             this.GBPlayers.Controls.Add(this.GBStatus);
+            this.GBPlayers.Controls.Add(this.BtnPlayer13);
             this.GBPlayers.Controls.Add(this.GBChat);
             this.GBPlayers.Controls.Add(this.GBAction);
             this.GBPlayers.Controls.Add(this.BtnChat);
@@ -100,30 +99,6 @@
             this.GBPlayers.TabStop = false;
             this.GBPlayers.Text = "Players";
             this.GBPlayers.BackgroundImageChanged += new System.EventHandler(this.BtnChat_Click);
-            // 
-            // BtnSignOut
-            // 
-            this.BtnSignOut.BackColor = System.Drawing.Color.White;
-            this.BtnSignOut.Location = new System.Drawing.Point(89, 71);
-            this.BtnSignOut.Name = "BtnSignOut";
-            this.BtnSignOut.Size = new System.Drawing.Size(95, 52);
-            this.BtnSignOut.TabIndex = 20;
-            this.BtnSignOut.Text = "Sign Out";
-            this.BtnSignOut.UseVisualStyleBackColor = false;
-            this.BtnSignOut.Click += new System.EventHandler(this.BtnSignOut_Click);
-            // 
-            // BtnPlayer13
-            // 
-            this.BtnPlayer13.Image = ((System.Drawing.Image)(resources.GetObject("BtnPlayer13.Image")));
-            this.BtnPlayer13.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.BtnPlayer13.Location = new System.Drawing.Point(671, 252);
-            this.BtnPlayer13.Name = "BtnPlayer13";
-            this.BtnPlayer13.Size = new System.Drawing.Size(90, 90);
-            this.BtnPlayer13.TabIndex = 19;
-            this.BtnPlayer13.Tag = "13";
-            this.BtnPlayer13.Text = "Player";
-            this.BtnPlayer13.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.BtnPlayer13.UseVisualStyleBackColor = true;
             // 
             // GBStatus
             // 
@@ -222,13 +197,12 @@
             // GBAction
             // 
             this.GBAction.BackColor = System.Drawing.Color.White;
-            this.GBAction.Controls.Add(this.BtnSignOut);
             this.GBAction.Controls.Add(this.BtnJoin);
             this.GBAction.Controls.Add(this.BtnAction);
             this.GBAction.Controls.Add(this.BtnVote);
             this.GBAction.Location = new System.Drawing.Point(270, 409);
             this.GBAction.Name = "GBAction";
-            this.GBAction.Size = new System.Drawing.Size(267, 131);
+            this.GBAction.Size = new System.Drawing.Size(267, 82);
             this.GBAction.TabIndex = 3;
             this.GBAction.TabStop = false;
             this.GBAction.Text = "Action";
@@ -536,7 +510,6 @@
         private System.Windows.Forms.Button BtnPlayer4;
         private System.Windows.Forms.Button BtnChat;
         private System.Windows.Forms.PictureBox BgDay;
-        private System.Windows.Forms.Button BtnSignOut;
         private System.Windows.Forms.Button BtnPlayer13;
     }
 }
